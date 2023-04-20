@@ -3,7 +3,7 @@ const Moralis = require("moralis").default;
 const discord = require("discord.js");
 require("dotenv").config();
 const app = express();
-const port = 8000;
+const port = process.env.PORT;
 
 const client = new discord.Client({
   intents: [discord.GatewayIntentBits.Guilds],
@@ -65,6 +65,6 @@ app.post("/webhook", async (req, res) => {
 //   apiKey: process.env.APIKEY,
 // }).then(() => {
   app.listen(port, () => {
-    console.log(`Listening to streams`);
+    console.log(`Listening to streams`, process.env.PORT);
   });
 // });
