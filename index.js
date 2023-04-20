@@ -61,10 +61,10 @@ app.post("/webhook", async (req, res) => {
   }
 });
 
-Moralis.start({
-  apiKey: process.env.APIKEY,
-}).then(() => {
+// Moralis.start({
+//   apiKey: process.env.APIKEY,
+// }).then(() => {
   app.listen(port, () => {
     console.log(`Listening to streams`);
   });
-});
+// });
